@@ -55,7 +55,7 @@
             })
         },
         // 长按事件
-        longTap: function (el, fn) {
+        hold: function (el, fn) {
             var touchStartX, touchStartY, touchEndX, touchEndY, lTapTimer = null
             // 在水平方向或者是垂直方向上，移动的距离 任意一个大于10，我们就不再认为是长按了，这里我们就清除定时器
             // 长按事件一般750ms去执行
@@ -69,7 +69,7 @@
                 lTapTimer = setTimeout(function () {
                     fn({
                         target: e.target,
-                        type: 'longTap',
+                        type: 'hold',
                         touches: e.changedTouches,
                         targetTouches: e.targetTouches
                     })
@@ -134,7 +134,7 @@
             })
         },
         // 上滑动事件
-        swiperTop: function (el, fn) {
+        swiperUp: function (el, fn) {
             var touchStartX, touchStartY, touchEndX, touchEndY
             el.addEventListener('touchstart', function () {
                 var e = e || event
@@ -148,7 +148,7 @@
                 if (touchEndY - touchStartY < 0 && Math.abs(touchEndX - touchStartX) < 5) {
                     fn({
                         target: e.target,
-                        type: 'swiperTop',
+                        type: 'swiperUp',
                         touches: e.changedTouches,
                         targetTouches: e.targetTouches
                     })
@@ -156,7 +156,7 @@
             })
         },
         // 下滑动事件
-        swiperBottom: function (el, fn) {
+        swiperDown: function (el, fn) {
             var touchStartX, touchStartY, touchEndX, touchEndY
             el.addEventListener('touchstart', function () {
                 var e = e || event
@@ -170,7 +170,7 @@
                 if (touchEndY - touchStartY > 0 && Math.abs(touchEndX - touchStartX) < 5) {
                     fn({
                         target: e.target,
-                        type: 'swiperBottom',
+                        type: 'swiperDown',
                         touches: e.changedTouches,
                         targetTouches: e.targetTouches
                     })
