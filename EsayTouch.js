@@ -1,5 +1,35 @@
 !(function (w) {
     w.EsayTouch = {
+        touchstart: function (el, fn) {
+            el.addEventListener('touchstart', function (e) {
+                var e = e || event
+                fn(e)
+            })
+        },
+        touchend: function (el, fn) {
+            el.addEventListener('touchend', function (e) {
+                var e = e || event
+                fn(e)
+            })
+        },
+        touchmove: function (el, fn) {
+            el.addEventListener('touchmove', function (e) {
+                var e = e || event
+                fn(e)
+            })
+        },
+        touchcancel: function (el, fn) {
+            el.addEventListener('touchcancel', function (e) {
+                var e = e || event
+                fn(e)
+            })
+        },
+        touchstart: function (el, fn) {
+            el.addEventListener('touchStart', function (e) {
+                var e = e || event
+                fn(e)
+            })
+        },
         // 移动端tap事件
         tap: function (el, fn) {
             var touchStartX, touchStartY, touchEndX, touchEndY
