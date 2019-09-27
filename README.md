@@ -7,7 +7,7 @@
 - 上滑动事件 EsayTouch.swiperTop(el,callback)
 - 下滑动事件 EsayTouch.swiperBottom(el,callback)
 - 原生事件
- - touchstart(el,callback)
- - touchend(el,callback)
- - touchmove(el,callback) 
- - touchcancel(el,callback) 
+  - touchstart(el,callback)
+  - touchend(el,callback)
+  - touchmove(el,callback) 
+  - touchcancel(el,callback) 
